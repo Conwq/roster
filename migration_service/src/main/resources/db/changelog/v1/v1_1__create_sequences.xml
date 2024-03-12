@@ -1,0 +1,13 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="roles_sequence" author="sergey.patseev">
+        <createSequence sequenceName="role_id_sequence" schemaName="roster" incrementBy="1" startValue="3"/>
+    </changeSet>
+    <changeSet id="users_sequence" author="sergey.patseev">
+        <createSequence sequenceName="user_id_sequence" schemaName="roster" incrementBy="1" startValue="2"/>
+    </changeSet>
+</databaseChangeLog>

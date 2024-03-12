@@ -1,0 +1,7 @@
+spring:
+  config:
+    import: file:./postgres-config.yml
+  liquibase:
+    change-log: /db/changelog/db.changelog-master.xml
+    default-schema: roster
+    liquibase-schema: migration

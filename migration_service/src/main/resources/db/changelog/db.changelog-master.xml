@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        logicalFilePath="changelog.xml">
+
+    <preConditions>
+        <dbms type="postgresql"/>
+    </preConditions>
+
+    <include file="v1/v1_1__create_sequences.xml" relativeToChangelogFile="true"/>
+    <include file="v1/v1_2__create_tables.xml" relativeToChangelogFile="true"/>
+    <include file="v1/v1_3__insert_values.xml" relativeToChangelogFile="true"/>
+    <include file="v2/v2_1__add_is_activated_column.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>

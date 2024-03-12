@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/roster_database
+    username: root
+    password: 1
+  jpa:
+    open-in-view: true
