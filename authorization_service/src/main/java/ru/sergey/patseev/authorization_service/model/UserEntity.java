@@ -20,7 +20,7 @@ public class UserEntity {
 	 */
 	@Id
 	@Column(name = "user_id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roster.user_id_sequence")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long userId;
 
 	/**
@@ -39,9 +39,19 @@ public class UserEntity {
 	private String password;
 
 	/**
+	 * Indicates whether the user is activated or not.
+	 */
+	private boolean isActivated;
+
+	/**
+	 * The activation code for the user.
+	 */
+	private String activationCode;
+
+	/**
 	 * The roles associated with the user.
 	 */
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(
 			schema = "roster",
 			name = "users_roles",
@@ -49,6 +59,12 @@ public class UserEntity {
 			inverseJoinColumns = @JoinColumn(name = "role_id")
 	)
 	private Set<RoleEntity> roles = new HashSet<>();
+
+	/**
+	 * The detail information of the user.
+	 */
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "userEntity")
+	private UserDetailEntity userDetailEntity;
 
 	/**
 	 * Calculates the hash code of the user entity based on its fields.

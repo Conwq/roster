@@ -6,18 +6,15 @@
 
     <changeSet id="insert_roles" author="sergey.patseev">
         <insert schemaName="roster" tableName="roles">
-            <column name="role_id" value="1" remarks="unique identifier of the role"/>
             <column name="role_name" value="ADMIN" remarks="role name"/>
         </insert>
         <insert schemaName="roster" tableName="roles">
-            <column name="role_id" value="2" remarks="unique identifier of the role"/>
             <column name="role_name" value="USER" remarks="role name"/>
         </insert>
     </changeSet>
 
     <changeSet id="insert_user_admin" author="sergey.patseev">
         <insert schemaName="roster" tableName="users">
-            <column name="user_id" value="1" remarks="unique identifier of the user"/>
             <column name="email" value="admin@bk.ru" remarks="email address of the administrator"/>
             <column name="username" value="admin" remarks="administrator username"/>
             <column name="password" value="1" remarks="administrator password"/>
@@ -26,12 +23,14 @@
 
     <changeSet id="insert_users_roles" author="sergey.patseev">
         <insert schemaName="roster" tableName="users_roles">
-            <column name="user_id" value="1" remarks=""/>
-            <column name="role_id" value="1" remarks=""/>
+            <column name="user_id" value="1" remarks="User with ID 1 gets Role with ID 1"/>
+            <
+            <column name="role_id" value="1" remarks="Role ID 1"/>
         </insert>
         <insert schemaName="roster" tableName="users_roles">
-            <column name="user_id" value="1" remarks=""/>
-            <column name="role_id" value="2" remarks=""/>
+            <column name="user_id" value="1" remarks="User with ID 1 gets Role with ID 2"/>
+            <column name="role_id" value="2" remarks="Role ID 2"/>
         </insert>
     </changeSet>
+
 </databaseChangeLog>

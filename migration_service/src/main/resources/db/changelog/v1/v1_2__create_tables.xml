@@ -6,7 +6,7 @@
 
     <changeSet id="create_roles_table" author="sergey.patseev">
        <createTable tableName="roles" schemaName="roster" remarks="creating a role table">
-           <column name="role_id" defaultValueSequenceNext="role_id_sequence" type="INT" remarks="The unique ID of the role" >
+           <column name="role_id" type="SERIAL" remarks="The unique ID of the role" >
                <constraints primaryKey="true"/>
            </column>
            <column name="role_name" type="VARCHAR(10)" remarks="The name of the role"/>
@@ -15,7 +15,7 @@
 
     <changeSet id="create_users_table" author="sergey.patseev">
         <createTable tableName="users" schemaName="roster" remarks="table for storing user information">
-            <column name="user_id" defaultValueSequenceNext="user_id_sequence" type="INT" remarks="The unique ID of the user">
+            <column name="user_id" type="SERIAL" remarks="The unique ID of the user">
                 <constraints primaryKey="true"/>
             </column>
             <column name="email" type="VARCHAR(50)" remarks="The email of the user"/>
@@ -26,10 +26,10 @@
 
     <changeSet id="create_users_roles_table" author="sergey.patseev">
         <createTable tableName="users_roles" schemaName="roster" remarks="table containing information on roles for users">
-            <column name="user_id" type="INT" remarks="">
+            <column name="user_id" type="INT" remarks="The unique ID of the user">
                 <constraints references="users" foreignKeyName="user_id" referencedTableSchemaName="roster"/>
             </column>
-            <column name="role_id" type="INT" remarks="">
+            <column name="role_id" type="INT" remarks="The unique ID of the role">
                 <constraints references="roles" foreignKeyName="role_id" referencedTableSchemaName="roster"/>
             </column>
         </createTable>

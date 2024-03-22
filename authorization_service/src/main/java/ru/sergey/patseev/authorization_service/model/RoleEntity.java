@@ -20,7 +20,7 @@ public class RoleEntity {
 	 */
 	@Id
 	@Column(name = "role_id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roster.role_id_sequence")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long roleId;
 
 	/**
@@ -29,7 +29,10 @@ public class RoleEntity {
 	@Column(name = "role_name")
 	private String roleName;
 
-	@ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
+	/**
+	 * The set of users associated with this role.
+	 */
+	@ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<UserEntity> users = new HashSet<>();
 
 	/**

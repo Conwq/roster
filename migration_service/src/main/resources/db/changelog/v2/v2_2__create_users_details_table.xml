@@ -1,0 +1,16 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="create_users_details_table" author="sergey.patseev">
+        <createTable schemaName="roster" tableName="users_details">
+            <column name="user_id" type="INT" remarks="User ID referencing the users table">
+                <constraints referencedTableSchemaName="roster" foreignKeyName="user_id" references="users" primaryKey="true"/>
+            </column>
+            <column name="registration_at" type="TIMESTAMP" defaultValue="now()" remarks="Timestamp of user registration"/>
+            <column name="last_login_at" type="TIMESTAMP" remarks="Timestamp of user's last login"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

@@ -10,4 +10,10 @@
                     remarks="A flag indicating whether the user account is activated"/>
         </addColumn>
     </changeSet>
+
+    <changeSet id="add_activation_code_column" author="sergey.patseev">
+        <addColumn tableName="users" schemaName="roster">
+            <column name="activation_code" type="VARCHAR" remarks="Activation code for user account"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
