@@ -13,6 +13,8 @@
     <include file="v1/v1_1__create_sequences.xml" relativeToChangelogFile="true"/>
     <include file="v1/v1_2__create_tables.xml" relativeToChangelogFile="true"/>
     <include file="v1/v1_3__insert_values.xml" relativeToChangelogFile="true"/>
+
     <include file="v2/v2_1__add_is_activated_column.xml" relativeToChangelogFile="true"/>
     <include file="v2/v2_2__create_users_details_table.xml" relativeToChangelogFile="true"/>
+    <include file="v2/v2_3__insert_data_into_users_details.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

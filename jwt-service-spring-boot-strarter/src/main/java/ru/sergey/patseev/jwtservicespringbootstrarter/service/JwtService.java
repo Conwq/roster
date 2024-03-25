@@ -28,7 +28,6 @@ public class JwtService {
 	@Value("${spring.jwt.expiration}")
 	private Long expiration;
 
-
 	/**
 	 * Generates a JWT token with the provided claims and username.
 	 *

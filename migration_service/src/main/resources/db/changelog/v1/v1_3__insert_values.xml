@@ -24,7 +24,6 @@
     <changeSet id="insert_users_roles" author="sergey.patseev">
         <insert schemaName="roster" tableName="users_roles">
             <column name="user_id" value="1" remarks="User with ID 1 gets Role with ID 1"/>
-            <
             <column name="role_id" value="1" remarks="Role ID 1"/>
         </insert>
         <insert schemaName="roster" tableName="users_roles">

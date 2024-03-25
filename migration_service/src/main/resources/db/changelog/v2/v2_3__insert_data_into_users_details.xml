@@ -1,0 +1,13 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="insert_data_for_admin" author="sergey.patseev">
+        <insert schemaName="roster" tableName="users_details">
+            <column name="user_id" value="1" remarks="The unique ID of the user"/>
+            <column name="registration_at" value="now()" remarks="registration date"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

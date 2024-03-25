@@ -22,4 +22,12 @@ public interface AuthorizationService {
 	 * @return The JWT token for the authorized user.
 	 */
 	String authorizeUser(UserDto userDto);
+
+	/**
+	 * Activates a user account using the activation code that was assigned during user registration.
+	 *
+	 * @param activationCode Unique user activation code.
+	 * @return Returns true if the user account was successfully activated, false otherwise.
+	 */
+	boolean activateAccount(String activationCode);
 }

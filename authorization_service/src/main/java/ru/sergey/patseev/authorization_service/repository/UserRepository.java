@@ -19,4 +19,20 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 	 * @return An Optional containing the UserEntity with the specified username, or empty if not found.
 	 */
 	Optional<UserEntity> findByUsername(String username);
+
+	/**
+	 * Retrieves a UserEntity by its email.
+	 *
+	 * @param email The email of the user.
+	 * @return An Optional containing the UserEntity with the specified email, or empty if not found.
+	 */
+	Optional<UserEntity> findByEmail(String email);
+
+	/**
+	 * Retrieves a UserEntity by its activationCode.
+	 *
+	 * @param activationCode The activationCode of the user.
+	 * @return An Optional containing the UserEntity with the specified activationCode, or empty if not found.
+	 */
+	Optional<UserEntity> findByActivationCode(String activationCode);
 }

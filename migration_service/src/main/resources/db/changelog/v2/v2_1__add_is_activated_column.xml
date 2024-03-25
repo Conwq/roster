@@ -13,7 +13,16 @@
 
     <changeSet id="add_activation_code_column" author="sergey.patseev">
         <addColumn tableName="users" schemaName="roster">
-            <column name="activation_code" type="VARCHAR" remarks="Activation code for user account"/>
+            <column name="activation_code" type="VARCHAR" remarks="Activation code for user account">
+                <constraints unique="true"/>
+            </column>
         </addColumn>
     </changeSet>
+
+    <changeSet id="set_activation_to_admin" author="sergey.patseev">
+        <update tableName="users" schemaName="roster">
+            <column name="is_activated" value="true" remarks="make the admin account active"/>
+        </update>
+    </changeSet>
+
 </databaseChangeLog>
